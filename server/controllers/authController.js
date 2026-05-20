@@ -42,7 +42,7 @@ const authController = {
 
         const token = jwt.sign(
           { id: user[idField], username: user.username, role },
-          process.env.JWT_SECRET,
+          process.env.JWT_SECRET || "aquatrack_secret_key_2025",
           { expiresIn: "7d" },
         );
 
